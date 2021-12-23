@@ -20,9 +20,10 @@ Then, for the $X$ that is not linearly distributed, we can obtain a approximatel
 $$S=G(WX+B)=G(V)$$
 
 ## What's environment modeling
-Assume that a robot has captured a data set $X = \{x_i,t_i\}_{i=1}^{L}$ by the end points of a laser ranger finder or depth cameras when moving in the environments. In the context of terrain modeling, $x_i$ is a 2D location and $t_i$ is its elevation. While in the context of 
-occupancy mapping, $x_i$ is a 2D or 3D location and $t_i$ is its occupancy state (0 or 1). Our idea for environment modeling is to build a linear regression model for terrain modeling and a linear classifier for occupancy mapping, between $\{x_i\}_{i=1}^{L}$ and $\{t_i\}_{i=1}^{L}$, 
-in a unified manner by using RMM.
+Assume that a robot has captured a data set $X = \{x_i,t_i\}_{i=1}^{L}$ by the end points of a laser ranger finder <br>
+or depth cameras when moving in the environments. In the context of terrain modeling, $x_i$ is a 2D location and $t_i$ is its elevation. <br> While in the context of  occupancy mapping, $x_i$ is a 2D or 3D location and $t_i$ is its occupancy state (0 or 1). <br>
+Our idea for environment modeling is to build a linear regression model for terrain modeling and a linear classifier for occupancy mapping,<br>
+between $\{x_i\}_{i=1}^{L}$ and $\{t_i\}_{i=1}^{L}$, in a unified manner by using RMM.
 ## How environment modeling with RMM
 Firstly, RMM can be generate a RM set with linear property, enabling the linear classifier or linear regression model. 
 Secondly, the occupancy mapping and terrain modeling can be treated as classification and refression task, respectively.
