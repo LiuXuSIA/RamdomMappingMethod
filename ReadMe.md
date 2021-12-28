@@ -1,4 +1,4 @@
-## Random mapping method (RMM) for terrain modeling
+## Random mapping method (RMM) for environment modeling
 A simple demo of random mapping method for environment modeling (occupacy mapping and terrain modeling). <br>
 __scripts__ :  A simple implementation codes for RMM with Python 3.8, numpy 1.21.2, and scipy 1.6.2 <br> 
 __datasets__ : The used datasets comprising *planet* and *lab*. <br>
@@ -19,11 +19,11 @@ Particularly, the elements of $W$ and $b$ are generated at random from a probabi
 Then, for the $X$ that is not linearly distributed, we can obtain a approximately linearly distributed set as follows
 $$S=G(WX+B)=G(V)$$
 
-## What's environment modeling
-Assume that a robot has captured a data set $X = \{x_i,t_i\}_{i=1}^{L}$ by the end points of a laser ranger finder <br>
-or depth cameras when moving in the environments. In the context of terrain modeling, $x_i$ is a 2D location and $t_i$ is its elevation. <br> While in the context of  occupancy mapping, $x_i$ is a 2D or 3D location and $t_i$ is its occupancy state (0 or 1). <br>
-Our idea for environment modeling is to build a linear regression model for terrain modeling and a linear classifier for occupancy mapping,<br>
-between $\{x_i\}_{i=1}^{L}$ and $\{t_i\}_{i=1}^{L}$, in a unified manner by using RMM.
+## What's environment modeling in the context of machine learning
+Assume that a robot has captured a data set $X = \{x_i,t_i\}_{i=1}^{L}$ by the end points of a laser ranger finder    <br>
+or depth cameras when moving in the environments. In the context of terrain modeling, $x_i$ is a 2D location and $t_i$ is its elevation.  <br> While in the context of  occupancy mapping, $x_i$ is a 2D or 3D location and $t_i$ is its occupancy state (0 or 1).    <br>
+Our idea for environment modeling is to build a linear regression model for terrain modeling and a linear classifier    <br>
+for occupancy mapping, between $\{x_i\}_{i=1}^{L}$ and $\{t_i\}_{i=1}^{L}$, in a unified manner by using RMM.
 ## How environment modeling with RMM
 Firstly, RMM can be generate a RM set with linear property, enabling the linear classifier or linear regression model. 
 Secondly, the occupancy mapping and terrain modeling can be treated as classification and refression task, respectively.
