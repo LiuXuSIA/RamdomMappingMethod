@@ -103,14 +103,14 @@ lab = 'datasets\\lab.txt'     # used for classifier (occupancy mapping)
 # example
 if __name__ == '__main__':
     # data loading and training number
-    Data = loadData(planet)
+    Data = loadData(lab)
     np.random.shuffle(Data)
-    L_training = int(len(Data) * 0.7)
+    L_training = int(len(Data) * 0.5)  #splitting the training set and the test set
     X, Y = Data[:,:-1], Data[:,-1]
-    # the targetDimens, actiFuncs, and scaleRates for planet and lab are
-    # (500, 'sin', 4) and (1000, 'sin', 3.2), respectively
+    # the targetDimens, actiFuncs, scaleRates, and learnerType for planet and lab are
+    # (500, 'sin', 4, 'reg') and (1000, 'sin', 3.2, 'cla'), respectively
     # mapping time
-    rmm = random_mapping_method(targetDimen=500, actiFunc='sin', scaleRate=4, learnerType='reg')
+    rmm = random_mapping_method(targetDimen=1000, actiFunc='sin', scaleRate=3.2, learnerType='cla')
     start_mapping_time = time.time()
     data_transformed = rmm.feature_mapping(X)
     end_mapping_time = time.time()
