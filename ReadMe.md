@@ -16,7 +16,7 @@ and $t_i \in {R}^m$ is the target value. RMM generate a feature mapping function
 $$\phi(x_i)=g(Wx_i+b)=g(v_i)=s_i$$
 where $W$ is a $M \times N$ matrix denoting a linear transformation, and $b$ is a $M \times 1$ bias vector. 
 Particularly, the elements of $W$ and $b$ are generated at random from a probability distribution, such as a uniform distribution.
-Then, for the $X$ that is not linearly distributed, we can obtain a approximately linearly distributed set as follows
+Then, for the $X$ that is not linearly distgributed, we can obtain a approximately linearly distributed set as follows
 $$S=G(WX+B)=G(V)$$
 
 ## What's environment modeling in the context of machine learning
