@@ -7,6 +7,7 @@ __email__='liuxu1@sia.cn'
 import numpy as np
 from scipy import linalg
 import time
+import matplotlib.pyplot as plt
 
 class random_mapping_method():
 
@@ -15,7 +16,7 @@ class random_mapping_method():
     targetDimen: int, the dimension of the target features
     actiFunc: string, the activation function defined within the class as follows
     scaleRate: float: the scale of the random weights 
-    learnerType: string, 'cla' for a classifier, 'reg' for a regreession model
+    learnerType: string, 'cla' for a classifier, 'reg' for a regression model
     '''
     def __init__(self,targetDimen=100, actiFunc='sin', scaleRate=1, learnerType='cla'):
         self.actiFunc = actiFunc
@@ -147,3 +148,19 @@ if __name__ == '__main__':
         # key results
         print('r2_training:%F, r2_test:%F, mseTraining:%f, mseTest:%f, time_training:%f, time_test:%f' \
             % (r2_training, r2_test, mseTraining, mseTest, time_training, time_test))
+
+    # example for map visualization
+    # the original locations and their predicted occupancy state
+    data_predicted = np.c_[X, Y_predicted]
+    # plot the map with the occupancy state as the color list
+    plt.scatter(data_predicted[:,0],data_predicted[:,1],cmap='jet',c=data_predicted[:,2],s=1,marker='o')
+    cbar = plt.colorbar()
+    # cbar.ax.tick_params(labelsize=16) 
+    # plt.title("predicted lab", fontsize = 15, pad = 10)
+    # plt.xlabel("x:m",fontsize = 20)  
+    # plt.ylabel("y:m",fontsize = 20)
+    # plt.xticks(fontsize = 16)
+    # plt.yticks(fontsize = 16)
+    plt.tight_layout()
+    plt.show() 
+    # plt.savefig('lab_predicted.jpg', dpi=500)
